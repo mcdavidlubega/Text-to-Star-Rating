@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin:10rem auto;
+    /* border: 1px solid red; */
+    width: 100px;
+}
+.ratingsContainer{
+display: flex;
+min-height:1.5rem;
+justify-content: space-between;
+align-items: center;
+max-width: 100%;
+/* border: 1px solid red; */
+}
+
+.starContainer{
+    width: 1rem;
+    height: 1rem;
+    /* border: 1px solid red; */
+    position: relative;
+    
+}
+.starFill{
+    /* width:50%; */
+    /* border: 5px solid green; */
+    overflow: hidden;
+    
+}
+.starOutline{
+    width:1rem;
+    height: 1rem;
+    /* border: 2px solid blue; */
+    position: absolute;
+    top: 0;
+}
+.starFill img{
+    width:1rem;
+    height: 1rem;
+    
+}
+.starOutline img{
+    width:1rem;
+    height: 1rem;
+}
+
+
