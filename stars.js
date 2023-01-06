@@ -19,7 +19,7 @@ for (let i = 0; i < ratings.length; i++) {
   const newRatingsContainer = document.createElement('div');
   newRatingsContainer.className = 'ratingsContainer';
 
-  function generateStars(percentageFill) {
+  const generateStars = (percentageFill) => {
     const newstarContainer = document.createElement('div');
     newstarContainer.className = 'starContainer';
 
@@ -43,7 +43,7 @@ for (let i = 0; i < ratings.length; i++) {
       .getElementById('container')
       .appendChild(newRatingsContainer)
       .appendChild(newstarContainer);
-  }
+  };
 
   //add full stars to ratings container
   for (let i = 0; i < fullStars; i++) {
