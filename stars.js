@@ -10,11 +10,11 @@ for (let i = 0; i < ratings.length; i++) {
   const fullStars = Math.floor(ratingScore);
 
   //fractional stars required
-  const fractionalStars = ratingScore.split('.')[1] * 10;
+  const fractionalStarsFill = ratingScore.split('.')[1] * 10;
 
   //left over stars (empty stars).
   let emptyStars;
-  emptyStars = fractionalStars > 0 ? 4 - fullStars : 5 - fullStars;
+  emptyStars = fractionalStarsFill > 0 ? 4 - fullStars : 5 - fullStars;
 
   const newRatingsContainer = document.createElement('div');
   newRatingsContainer.className = 'ratingsContainer';
@@ -51,8 +51,8 @@ for (let i = 0; i < ratings.length; i++) {
   }
 
   //add fractional star to ratings container if there are any
-  if (fractionalStars > 0) {
-    generateStars(fractionalStars);
+  if (fractionalStarsFill > 0) {
+    generateStars(fractionalStarsFill);
   }
 
   //add Empty Stars
