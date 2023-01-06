@@ -44,6 +44,7 @@ for (let i = 0; i < ratings.length; i++) {
       .appendChild(newRatingsContainer)
       .appendChild(newstarContainer);
   }
+
   //add full stars to ratings container
   for (let i = 0; i < fullStars; i++) {
     generateStars(100);
