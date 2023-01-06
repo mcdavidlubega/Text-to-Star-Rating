@@ -12,14 +12,14 @@ for (let i = 0; i < ratings.length; i++) {
   //fractional stars required
   const fractionalStars = ratingScore.split('.')[1] * 10;
 
-  //left over stars (empty stars)
+  //left over stars (empty stars).
   let emptyStars;
   emptyStars = fractionalStars > 0 ? 4 - fullStars : 5 - fullStars;
 
   const newRatingsContainer = document.createElement('div');
   newRatingsContainer.className = 'ratingsContainer';
 
-  //Add full stars to ratings container
+  //add full stars to ratings container
   for (let i = 0; i < fullStars; i++) {
     const newstarContainer = document.createElement('div');
     newstarContainer.className = 'starContainer';
@@ -45,7 +45,7 @@ for (let i = 0; i < ratings.length; i++) {
       .appendChild(newstarContainer);
   }
 
-  //Add fractional star to ratings container
+  //add fractional star to ratings container if there are any
   if (fractionalStars > 0) {
     const newstarContainer = document.createElement('div');
     newstarContainer.className = 'starContainer';
@@ -73,7 +73,7 @@ for (let i = 0; i < ratings.length; i++) {
       .appendChild(newstarContainer);
   }
 
-  //Add Empty Stars
+  //add Empty Stars
 
   for (let i = 0; i < emptyStars; i++) {
     const newstarContainer = document.createElement('div');
