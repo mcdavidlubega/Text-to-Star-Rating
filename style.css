@@ -1,54 +1,49 @@
-:root{
-    --starScale: 0.9rem;
-    --starColor: #FF772C;
+:root {
+  --starScale: 0.9rem;
+  --starColor: #ff772c;
 }
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.container{
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.ratingsContainer{
-display: flex;
-justify-content: space-between;
-align-items: center;
-/* max-width: 100%; */
-gap: calc(var(--starScale)*0.2);
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.starContainer{
-    width: var(--starScale);
-    height: var(--starScale);
-    /* border: 1px solid red; */
-    position: relative;
-    
-}
-.starFill{
-    overflow: hidden;
-    
-}
-.starOutline{
-    width:var(--starScale);
-    height: var(--starScale);
-    position: absolute;
-    top: 0;
-}
-.starFill svg{
-    width:var(--starScale);
-    height: var(--starScale);
-    fill:var(--starColor)
-    
-}
-.starOutline svg{
-    width:var(--starScale);
-    height: var(--starScale);
-    fill: var(--starColor);
+.ratingsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* max-width: 100%; */
+  gap: calc(var(--starScale) * 0.2);
 }
 
-
+.starContainer {
+  width: var(--starScale);
+  height: var(--starScale);
+  /* border: 1px solid red; */
+  position: relative;
+}
+.starFill {
+  overflow: hidden;
+}
+.starOutline {
+  width: var(--starScale);
+  height: var(--starScale);
+  position: absolute;
+  top: 0;
+}
+.starFill svg {
+  width: var(--starScale);
+  height: var(--starScale);
+  fill: var(--starColor);
+}
+.starOutline svg {
+  width: var(--starScale);
+  height: var(--starScale);
+  fill: var(--starColor);
+}
