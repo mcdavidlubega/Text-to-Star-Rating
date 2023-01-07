@@ -1,49 +1,53 @@
 //get the parent div (.container)
 const ratingsContainer = document.getElementById('container');
+
 //get all the ratings on the page so we cn iterate through them
 const ratings = ratingsContainer.getElementsByClassName('rating');
 
-//create new ratings container
+let newRatingsContainer;
+
+function generateStars(percentageFill) {
+  const newstarContainer = document.createElement('div');
+  newstarContainer.className = 'starContainer';
+
+  const starFill = document.createElement('div');
+  starFill.className = 'starFill';
+  starFill.style.width = `${percentageFill}%`;
+  const starFillImage = document.createElement('img');
+  starFillImage.src = 'images/star.svg';
+
+  const starOutline = document.createElement('div');
+  starOutline.className = 'starOutline';
+  const starOutlineImage = document.createElement('img');
+  starOutlineImage.src = 'images/outline.svg';
+
+  newstarContainer.appendChild(starFill).appendChild(starFillImage);
+  newstarContainer.appendChild(starOutline).appendChild(starOutlineImage);
+
+  document
+    .getElementById('container')
+    .appendChild(newRatingsContainer)
+    .appendChild(newstarContainer);
+}
+
+//iterate through all divs with  ratings class in the  container element
 for (let i = 0; i < ratings.length; i++) {
-  const ratingScore = parseFloat(ratings[i].innerHTML).toFixed(1);
-  //full stars required
+  //get the number rating from each div and make sure its a float with one decimal poiint
+  const ratingScore = parseFloat(ratings[i].textContent).toFixed(1);
+
+  //get the full stars required
   const fullStars = Math.floor(ratingScore);
 
-  //fractional stars required
+  //get the fractional stars required
   const fractionalStarsFill = ratingScore.split('.')[1] * 10;
 
-  //left over stars (empty stars).
+  //get the left over stars (empty stars).
   let emptyStars;
   emptyStars = fractionalStarsFill > 0 ? 4 - fullStars : 5 - fullStars;
 
-  const newRatingsContainer = document.createElement('div');
+  //generate ratings container div
+  newRatingsContainer = document.createElement('div');
   newRatingsContainer.className = 'ratingsContainer';
-
-  const generateStars = (percentageFill) => {
-    const newstarContainer = document.createElement('div');
-    newstarContainer.className = 'starContainer';
-
-    const starFill = document.createElement('div');
-    starFill.className = 'starFill';
-    starFill.style.width = `${percentageFill}%`;
-    const starFillImage = document.createElement('img');
-    starFillImage.src = 'images/star.svg';
-
-    const starOutline = document.createElement('div');
-    starOutline.className = 'starOutline';
-    const starOutlineImage = document.createElement('img');
-    starOutlineImage.src = 'images/outline.svg';
-    const newstarContainerFill = newstarContainer
-      .appendChild(starFill)
-      .appendChild(starFillImage);
-    const newstarContainerOutline = newstarContainer
-      .appendChild(starOutline)
-      .appendChild(starOutlineImage);
-    document
-      .getElementById('container')
-      .appendChild(newRatingsContainer)
-      .appendChild(newstarContainer);
-  };
 
   //add full stars to ratings container
   for (let i = 0; i < fullStars; i++) {
