@@ -66,6 +66,7 @@ for (let i = 0; i < ratings.length; i++) {
   }
 }
 
+//Remove original text rating from the DOM
 const textRating = document.querySelectorAll('.rating');
 for (let i = 0; i < textRating.length; i++) {
   textRating[i].remove();
