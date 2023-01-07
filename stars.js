@@ -1,6 +1,5 @@
 //get all the ratings on the page so we cn iterate through them
 const ratings = document.querySelectorAll('.rating');
-const holders = document.querySelectorAll('.holder');
 
 //initate a new rating container
 let newRatingsContainer;
@@ -75,7 +74,6 @@ for (let i = 0; i < ratings.length; i++) {
     generateStars(100);
   }
 
-  console.log(generateStars(100));
   //add fractional star to ratings container if there are any
   if (fractionalStarsFill > 0) {
     generateStars(fractionalStarsFill);
