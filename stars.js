@@ -1,8 +1,5 @@
-//get the parent div (.container)
-const ratingsContainer = document.getElementById('container');
-
 //get all the ratings on the page so we cn iterate through them
-const ratings = ratingsContainer.getElementsByClassName('rating');
+const ratings = document.querySelectorAll('.rating');
 
 let newRatingsContainer;
 
@@ -25,7 +22,7 @@ function generateStars(percentageFill) {
   newstarContainer.appendChild(starOutline).appendChild(starOutlineImage);
 
   document
-    .getElementById('container')
+    .querySelector('.holder')
     .appendChild(newRatingsContainer)
     .appendChild(newstarContainer);
 }
