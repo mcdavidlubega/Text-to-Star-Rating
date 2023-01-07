@@ -1,3 +1,13 @@
+//get all the ratings on the page so we cn iterate through them
+const ratings = document.querySelectorAll('.rating');
+const holders = document.querySelectorAll('.holder');
+
+//initate a new rating container
+let newRatingsContainer;
+
+//initiate new star container
+let newstarContainer;
+
 //create svg elements
 function makeStar(starType) {
   const svgns = 'http://www.w3.org/2000/svg';
@@ -20,11 +30,7 @@ function makeStar(starType) {
   return svg;
 }
 
-//get all the ratings on the page so we cn iterate through them
-const ratings = document.querySelectorAll('.rating');
-
-let newRatingsContainer;
-
+//generate stars
 function generateStars(percentageFill) {
   const newstarContainer = document.createElement('div');
   newstarContainer.className = 'starContainer';
@@ -39,10 +45,7 @@ function generateStars(percentageFill) {
   newstarContainer.appendChild(starFill).appendChild(makeStar('filled'));
   newstarContainer.appendChild(starOutline).appendChild(makeStar());
 
-  document
-    .querySelector('.holder')
-    .appendChild(newRatingsContainer)
-    .appendChild(newstarContainer);
+  newRatingsContainer.appendChild(newstarContainer);
 }
 
 //iterate through all divs with  ratings class in the  container element
@@ -64,11 +67,15 @@ for (let i = 0; i < ratings.length; i++) {
   newRatingsContainer = document.createElement('div');
   newRatingsContainer.className = 'ratingsContainer';
 
+  //replace text rating
+  ratings[i].replaceWith(newRatingsContainer);
+
   //add full stars to ratings container
   for (let i = 0; i < fullStars; i++) {
     generateStars(100);
   }
 
+  console.log(generateStars(100));
   //add fractional star to ratings container if there are any
   if (fractionalStarsFill > 0) {
     generateStars(fractionalStarsFill);
@@ -78,10 +85,4 @@ for (let i = 0; i < ratings.length; i++) {
   for (let i = 0; i < emptyStars; i++) {
     generateStars(0);
   }
-}
-
-//Remove original text rating from the DOM
-const textRating = document.querySelectorAll('.rating');
-for (let i = 0; i < textRating.length; i++) {
-  textRating[i].remove();
 }
