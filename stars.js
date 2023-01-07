@@ -60,7 +60,6 @@ for (let i = 0; i < ratings.length; i++) {
   }
 
   //add Empty Stars
-
   for (let i = 0; i < emptyStars; i++) {
     generateStars(0);
   }
