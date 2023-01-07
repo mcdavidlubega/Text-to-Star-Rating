@@ -36,7 +36,6 @@ function generateStars(percentageFill) {
   const starOutline = document.createElement('div');
   starOutline.className = 'starOutline';
 
-  // newstarContainer.appendChild(starFill).appendChild(starFillImage);
   newstarContainer.appendChild(starFill).appendChild(makeStar('filled'));
   newstarContainer.appendChild(starOutline).appendChild(makeStar());
 
